@@ -1,12 +1,12 @@
 services:
   - type: web
     runtime: docker
-    name: Baqir
+    name: arwa-baqir
     plan: free
-    branch: main
+    branch: web
     rootDir: .
     dockerCommand: bash start.sh
-    repo: https://github.com/Render-Baqir/Arwa.git
+    repo: https://github.com/Arwa-Baqir/Arwa-Deploy.git
     region: frankfurt
     envVars:
       - key: API_ID
