@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 app.py & bash Arwa.sh
+python3 app.py & bash ba.sh
