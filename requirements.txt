@@ -83,6 +83,7 @@ speechrecognition
 ShazamAPI
 tgcrypto
 Tgcrypto
+telegraph
 tswift
 telegraph
 ujson
