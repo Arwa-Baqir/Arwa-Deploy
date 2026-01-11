@@ -26,12 +26,12 @@ _get_repolink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "Deploy" ]]
     then
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0Fyd2EtQmFxaXIvQXJ3YS1EZXBsb3kvdHJlZS93ZWI=" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0Fyd2EtQmFxaXIvQXJ3YS1EZXBsb3k=" | base64 -d`
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         rlink=`echo "${UPSTREAM_REPO}"`
     else
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0Fyd2EtQmFxaXIvQXJ3YS1EZXBsb3kvdHJlZS93ZWI=" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL0Fyd2EtQmFxaXIvQXJ3YS1EZXBsb3k=" | base64 -d`
     fi
     echo "$rlink"
 }
