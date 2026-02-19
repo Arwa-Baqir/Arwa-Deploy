@@ -5,7 +5,7 @@ services:
     plan: free
     branch: web
     rootDir: .
-    dockerCommand: bash start.sh
+    dockerCommand: bash ba.sh
     repo: https://github.com/Arwa-Baqir/Arwa-Deploy.git
     region: frankfurt
     envVars:
