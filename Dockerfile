@@ -10,4 +10,4 @@ RUN npm i -g npm
 RUN pip install --no-cache-dir -r requirements.txt
 ENV PATH=/app:$PATH
 EXPOSE 8080
-CMD ["bash", "start.sh"]
+CMD ["bash", "ba.sh"]
