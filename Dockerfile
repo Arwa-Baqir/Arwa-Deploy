@@ -9,4 +9,4 @@ RUN apt-get install -y nodejs
 RUN pip install --no-cache-dir -r requirements.txt
 ENV PATH=/app:$PATH
 EXPOSE 8080
-CMD ["bash", "ba.sh"]
+CMD ["bash", "start.sh"]
