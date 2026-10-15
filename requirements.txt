@@ -99,3 +99,5 @@ youtube-search-python
 youtube_dl
 youtube-search
 yt-dlp
+yt-dlp-get-pot
+bgutil-ytdlp-pot-provider
