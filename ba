@@ -86,15 +86,17 @@ _set_bot () {
     echo "⌭ جـاري بـدء تنصيـب ريبـــثون ⌭"
     echo "
     "
-    echo "⌭ جـاري تشغيـل الـحـماية ⌭"
-    bgutil-ytdlp-pot-provider --port 4416 > /tmp/pot_provider.log 2>&1 &
-    POT_PID=$!
-    sleep 5
-    if wget -q --spider http://127.0.0.1:4416/ping 2>/dev/null; then
-        echo "✅ PO Token Provider is running (PID: $POT_PID) on port 4416"
+    echo "⌭ جـاري تحضيـر حـمـاية الحساب ⌭"
+    export BGUTIL_SCRIPT_PATH=$(python3 -c "
+import bgutil_ytdlp_pot_provider, os
+print(os.path.join(os.path.dirname(bgutil_ytdlp_pot_provider.__file__), 'server', 'build', 'main.js'))
+" 2>/dev/null)
+
+    if [ -f "$BGUTIL_SCRIPT_PATH" ]; then
+        echo "✅ bgutil script path: $BGUTIL_SCRIPT_PATH"
     else
-        echo "⚠️ PO Token Provider may have failed. Logs:"
-        cat /tmp/pot_provider.log 2>/dev/null | tail -20
+        echo "⚠️ bgutil script not found at: $BGUTIL_SCRIPT_PATH"
+        echo "⚠️ Continuing anyway..."
     fi
     python3 -m repthon
 }
