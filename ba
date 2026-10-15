@@ -86,6 +86,16 @@ _set_bot () {
     echo "⌭ جـاري بـدء تنصيـب ريبـــثون ⌭"
     echo "
     "
+    echo "⌭ جـاري تشغيـل الـحـماية ⌭"
+    bgutil-ytdlp-pot-provider --port 4416 > /tmp/pot_provider.log 2>&1 &
+    POT_PID=$!
+    sleep 5
+    if wget -q --spider http://127.0.0.1:4416/ping 2>/dev/null; then
+        echo "✅ PO Token Provider is running (PID: $POT_PID) on port 4416"
+    else
+        echo "⚠️ PO Token Provider may have failed. Logs:"
+        cat /tmp/pot_provider.log 2>/dev/null | tail -20
+    fi
     python3 -m repthon
 }
 
