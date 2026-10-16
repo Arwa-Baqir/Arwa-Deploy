@@ -86,18 +86,6 @@ _set_bot () {
     echo "⌭ جـاري بـدء تنصيـب ريبـــثون ⌭"
     echo "
     "
-    echo "⌭ جـاري تحضيـر حـمـاية الحساب ⌭"
-    export BGUTIL_SCRIPT_PATH=$(python3 -c "
-import bgutil_ytdlp_pot_provider, os
-print(os.path.join(os.path.dirname(bgutil_ytdlp_pot_provider.__file__), 'server', 'build', 'main.js'))
-" 2>/dev/null)
-
-    if [ -f "$BGUTIL_SCRIPT_PATH" ]; then
-        echo "✅ bgutil script path: $BGUTIL_SCRIPT_PATH"
-    else
-        echo "⚠️ bgutil script not found at: $BGUTIL_SCRIPT_PATH"
-        echo "⚠️ Continuing anyway..."
-    fi
     python3 -m repthon
 }
 
