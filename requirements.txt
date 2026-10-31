@@ -95,7 +95,7 @@ vcsi
 wand
 wget
 wikipedia
-youtube-search-python
+yt-search-python
 youtube_dl
 youtube-search
 yt-dlp
